@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  back:
+    image: back:latest
+    ports:
+      - "3000:3000"
+  front:
+    image: front:latest
+    ports:
+      - "4000:4000"
+    build: .
+    depends_on:
+      - back
